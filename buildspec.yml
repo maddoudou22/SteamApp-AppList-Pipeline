@@ -12,7 +12,7 @@ phases:
       - mv source/index.js .
       - mv source/node_modules .
       - mv source/package-lock.json .
-      - rm -rf source buildspec.yml index.js deploiementSteamAppTrafficHook.js test-expectedResult.json test-input.json
+      - rm -rf source buildspec.yml steamApp-template.yml deploiementSteamAppTrafficHook.js test-expectedResult.json test-input.json
       - aws cloudformation package --template steamApp-template.yml --kms-key-id $S3_KEY --s3-bucket $S3_BUCKET --output-template steamApp-template-export.yml
 artifacts:
   files:
