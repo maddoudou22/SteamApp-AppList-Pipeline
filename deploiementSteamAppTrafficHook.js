@@ -56,8 +56,10 @@ exports.handler = (event, context, callback) => {
         invoquefonctionCible(lambda, targetVersion, stringTestInput, function(responseFromTargetFunction){
             console.log("responseFromTargetFunction : ", responseFromTargetFunction);
             console.log("stringTestExpected : ", stringTestExpected);
+            console.log("body : " + responseFromTargetFunction.body);
+            const responseBody = responseFromTargetFunction.body;
             // Comparaison de la reponse de la fonction avec le resultat de test attendu :
-            if (responseFromTargetFunction.trim() == stringTestExpected.trim()) resultatFinal = 'Succeeded';
+            if (responseBody.trim() == stringTestExpected.trim()) resultatFinal = 'Succeeded';
             else resultatFinal = 'Failed';
 
             creeAlarmeCloudwatch(cloudwatch, cloudformationAlarm, targetFunctionName, aliasName, versionToTest, function(responseAlarmCreation){
