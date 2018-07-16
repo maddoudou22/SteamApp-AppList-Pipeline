@@ -100,7 +100,7 @@ Resources:
   deploiementSteamAppPreTrafficHook:
     Type: AWS::Serverless::Function
     Properties:
-      Handler: deploiementSteamAppPreTrafficHook.handler
+      Handler: deploiementSteamAppTrafficHook.handler
       Policies:
         - Version: "2012-10-17"
           Statement:
