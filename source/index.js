@@ -1,4 +1,5 @@
 var AWS = require('aws-sdk');
+var request = require('request');
 
 exports.handler = (event, context, callback) => {
     AWS.config.update({region: 'eu-west-1'});

@@ -5,6 +5,9 @@ phases:
     commands:
       - echo Entering build phase...
       - echo Build started on `date`
+      - cd source
+      - npm install request
+      - cd ..
       - pip install --upgrade awscli
       - cp source/index.js .
       - aws cloudformation package --template steamApp-template.yml --kms-key-id $S3_KEY --s3-bucket $S3_BUCKET --output-template steamApp-template-export.yml
