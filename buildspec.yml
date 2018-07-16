@@ -7,7 +7,6 @@ phases:
       - echo Build started on `date`
       - pip install --upgrade awscli
       - cp source/index.js .
-      - unzip index.js
       - aws cloudformation package --template steamApp-template.yml --kms-key-id $S3_KEY --s3-bucket $S3_BUCKET --output-template steamApp-template-export.yml
 artifacts:
   files:
