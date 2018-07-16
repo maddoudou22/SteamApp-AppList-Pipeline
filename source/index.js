@@ -10,7 +10,7 @@ exports.handler = (event, context, callback) => {
     console.log("prenom: " + event.nom);
 
             var responseBody = {
-                "bienvenue": "Bienvenue 2 " + event.prenom + ", " + event.nom
+                "bienvenue": "Bienvenue 3 " + event.prenom + ", " + event.nom
             };
     
             var response = {
