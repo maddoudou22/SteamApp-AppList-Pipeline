@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>hello</groupId>
-    <artifactId>deploiement-java</artifactId>
+    <artifactId>steamApp</artifactId>
     <version>0.1</version>
 
     <properties>
