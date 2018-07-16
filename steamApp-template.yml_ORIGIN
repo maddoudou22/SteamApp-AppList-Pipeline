@@ -12,7 +12,7 @@ Parameters:
   deploymentType:
     Description: "Modalite de deploiement pour la fonction"
     Type: 'String'
-    Default: "AllAtOnce"
+    Default: "Canary10Percent10Minutes"
 
   fileTestInput:
     Description: "Fichier contenant le corps de la requete passee a la fonction Lambda pour son test"
@@ -78,8 +78,8 @@ Resources:
   steamAppPipelineFunction:
     Type: AWS::Serverless::Function
     Properties:
-      Handler: index.handler
-      Runtime: nodejs8.10
+      Handler: hello.handler.LambdaMethodHandler::handleRequest
+      Runtime: java8
 
       AutoPublishAlias: !Ref aliasName
       DeploymentPreference:
