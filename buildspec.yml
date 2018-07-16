@@ -6,12 +6,8 @@ phases:
       - echo Entering build phase...
       - echo Build started on `date`
       - pip install --upgrade awscli
-      - mvn package shade:shade
-      - ls .
-      - ls target/
-      - mv target/steamApp-0.*.jar .
-      - unzip steamApp-0.*.jar
-      - rm -rf target src buildspec.yml pom.xml steamApp-0.*.jar
+      - cp source/index.js .
+      - unzip index.js
       - aws cloudformation package --template steamApp-template.yml --kms-key-id $S3_KEY --s3-bucket $S3_BUCKET --output-template steamApp-template-export.yml
 artifacts:
   files:
