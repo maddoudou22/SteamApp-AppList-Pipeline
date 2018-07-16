@@ -56,8 +56,12 @@ exports.handler = (event, context, callback) => {
         invoquefonctionCible(lambda, targetVersion, stringTestInput, function(responseFromTargetFunction){
             console.log("responseFromTargetFunction : ", responseFromTargetFunction);
             console.log("stringTestExpected : ", stringTestExpected);
-            console.log("body : " + responseFromTargetFunction.body);
-            const responseBody = responseFromTargetFunction.body;
+
+            const responseParse = JSON.parse(responseFromTargetFunction);
+            console.log("responseParse: " + responseParse);
+            const responseBody = responseParse.body;
+            console.log("responseBody : " + responseBody);
+
             // Comparaison de la reponse de la fonction avec le resultat de test attendu :
             if (responseBody.trim() == stringTestExpected.trim()) resultatFinal = 'Succeeded';
             else resultatFinal = 'Failed';
