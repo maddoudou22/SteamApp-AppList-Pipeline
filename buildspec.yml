@@ -9,7 +9,8 @@ phases:
       - npm install request
       - cd ..
       - pip install --upgrade awscli
-      - cp source/index.js .
+      - mv source .
+      - rm -rf buildspec.yml index.js deploiementSteamAppTrafficHook.js test-expectedResult.json test-input.json
       - aws cloudformation package --template steamApp-template.yml --kms-key-id $S3_KEY --s3-bucket $S3_BUCKET --output-template steamApp-template-export.yml
 artifacts:
   files:
