@@ -11,7 +11,7 @@ exports.handler = (event, context, callback) => {
     console.log("prenom: " + event.nom);
 
             var responseBody = {
-                "bienvenue": "Bienvenue a " + event.prenom + ", " + event.nom + " !"
+                "bienvenue": "Bienvenue " + event.prenom + ", " + event.nom + " !"
             };
     
             var response = {
